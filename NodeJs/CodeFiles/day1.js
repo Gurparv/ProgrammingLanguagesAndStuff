@@ -26,8 +26,9 @@ console.log('File is written');
 
 //Reading from file Asynchronously, Non-Blocking way.
 fs.readFile("\\Users\\manji\\Desktop\\dummy.txt","utf-8",(err,myData)=>{ 	//This weird thing is callback function 
-console.log(`${myData} 😁`);
-});
+	if(err) return console.log("Error 🥶"); //Error handled.
+	console.log(`${myData} 😁`);
+	});
 console.log("This should be read at last"); // This gets printed before the above line becoz of Asynchronous
 
 	//Just another example of asyc reading of file - here reading a file, which contains name of another file and then we are reading that 2nd file too
@@ -45,13 +46,5 @@ fs.writeFile("\\Users\\manji\\Desktop\\nodeDummy.txt",inputData,"utf-8",(err) =>
 });
 
 ////////////////////////////////////////////////////////////////////////////////
-
-/**** Importing Modules ****/
-
-
-
-
-
-
 
 
